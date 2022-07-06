@@ -1,24 +1,66 @@
-# README
+#テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## itemsテーブル
+|Columm               |Type       |Options                        |
+|---------------------|-----------|-------------------------------|
+|memo                 |text       |                               |
+|category_id          |integer    |null: false                    |
+|size                 |string     |                               |
+|brand                |string     |                               |
+|color_id             |integer    |null: false                    |
+|user                 |references |null: false, foreign_key: true |
 
-Things you may want to cover:
+### Association
+- belongs_to :user
+- has_many :comments
+- has_many :favorites
 
-* Ruby version
 
-* System dependencies
 
-* Configuration
+## usersテーブル
+|Columm               |Type       |Options                        |
+|---------------------|-----------|-------------------------------|
+|nickname             |string     |null: false,                   |
+|email                |string     |null: false, unique: true      |
+|encrypted_password   |string     |null: false                    |
 
-* Database creation
+### Association
+- has_many :items
+- has_many :comments
+- has_many :favorites
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## commentsテーブル
+|Columm               |Type       |Options                        |
+|---------------------|-----------|-------------------------------|
+|comment              |text       |null: false,                   |
+|user                 |references |null: false, foreign_key: true |
+|item                 |references |null: false, foreign_key: true |
 
-* Deployment instructions
+### Association
+- belongs_to :items
+- belongs_to :users
 
-* ...
+
+
+## favoritesテーブル
+|Columm               |Type       |Options                        |
+|---------------------|-----------|-------------------------------|
+|user                 |references |null: false, foreign_key: true |
+|item                 |references |null: false, foreign_key: true |
+
+### Association
+- belongs_to :items
+- belongs_to :users
+
+
+
+## followsテーブル
+|Columm               |Type       |Options                        |
+|---------------------|-----------|-------------------------------|
+|follower_id          |references |null: false, foreign_key: true |
+|followed_id          |references |null: false, foreign_key: true |
+
+### Association
+- belongs_to :users
