@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   def index
+    @category2 = Item.where(category_id: "2")
+    @category3 = Item.where(category_id: "3")
   end
 
   def new
