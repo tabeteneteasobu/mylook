@@ -1,0 +1,14 @@
+<h1><%= link_to 'My Look', root_path, class: "#" %></h1>
+<h2>ボトムス一覧</h2>
+
+<ul class='item-lists'>
+  <% @category3.each do |category| %>
+      <li class='list'>
+        <div class ='item-img-content'>
+        <%= link_to(bottom_path(category.id), class: '#') do %>
+          <%= image_tag category.image.variant(resize: '300x300'), class: "item-img" %>
+        <% end %>
+        </div>
+      </li>
+  <% end %>
+</ul>

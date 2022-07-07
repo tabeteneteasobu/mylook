@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
   root to: "items#index"
-  resources :items, only: [:new, :create, :show]
+  resources :items, only: [:index, :new, :create]
+  resources :tops, only: [:index, :show]
+  resources :bottoms, only: [:index, :show]
 end
