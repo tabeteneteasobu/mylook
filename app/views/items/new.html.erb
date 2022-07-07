@@ -1,0 +1,67 @@
+<h1><%= link_to 'My Look', root_path, class: "#" %></h1>
+
+<h2>アイテム登録</h2>
+
+<div class="items-sell-main">
+    <h2 class="items-sell-title">アイテム情報を入力</h2>
+    <%= form_with model: @item, url: items_path, local: true do |f| %>
+
+    <div class="new-items">
+    <%# 画像 %>
+    <div class="img-upload">
+      <div class="weight-bold-text">
+        アイテム画像
+        <span class="indispensable">必須</span>
+      </div>
+      <div class="click-upload">
+        <p>
+          クリックしてファイルをアップロード
+        </p>
+        <%= f.file_field :image, id:"#" %>
+      </div>
+    </div>
+      <%# カテゴリ %>
+      <div class="items-category">
+        <div class="weight-bold-text">
+          カテゴリー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {id: 1}, {class:"select-box", id:"#"}) %>
+      </div>
+      <%# カラー %>
+      <div class="items-color">
+        <div class="weight-bold-text">
+          カラー
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:color_id, Color.all, :id, :name, {id: 1}, {class:"select-box", id:"#"}) %>
+      </div>
+      <%# ブランド %>
+      <div class="items-brand">
+        <div class="weight-bold-text">
+          ブランド
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :brand, class:"items-text", id:"item-info", placeholder:"ブランド" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <%# サイズ %>
+      <div class="items-size">
+        <div class="weight-bold-text">
+          サイズ
+        </div>
+        <%= f.text_area :size, class:"items-text", id:"item-info", placeholder:"サイズ" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+      <%# メモ %>
+      <div class="items-explain">
+        <div class="weight-bold-text">
+          メモ
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_area :memo, class:"items-text", id:"item-info", placeholder:"アイテムメモ（1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+      </div>
+    </div>
+    <div class="sell-btn-contents">
+      <%= f.submit "登録する" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <% end %>

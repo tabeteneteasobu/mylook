@@ -6,7 +6,7 @@
 |memo                 |text       |                               |
 |category_id          |integer    |null: false                    |
 |size                 |string     |                               |
-|brand                |string     |                               |
+|brand                |string     |null: false                    |
 |color_id             |integer    |null: false                    |
 |user                 |references |null: false, foreign_key: true |
 
