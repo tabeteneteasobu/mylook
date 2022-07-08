@@ -1,3 +1,29 @@
 <h1><%= link_to 'My Look', root_path, class: "#" %></h1>
 
-<h2>アイテム一覧</h2>
+<h2>商品詳細ページ</h2>
+
+<%#画像 %>
+<div class="item-img-content">
+  <%= image_tag @item.image.variant(resize: '500x500') %>
+</div>
+
+<div class="item-brand">
+  ブランド：<%= @item.brand%>
+</div>
+
+<div class="item-color">
+  色：<%= @item.color_id %>
+</div>
+
+<div class="item-size">
+  サイズ：<%= @item.size %>
+</div>
+
+<div class="item-memo">
+  メモ：<%= @item.memo %>
+</div>
+
+<div>
+最近このアイテムは閲覧されていませんでした
+手放そうかなと思っている方は<%= link_to 'こちら', 'https://furima-38096.herokuapp.com/' %>
+</div>
