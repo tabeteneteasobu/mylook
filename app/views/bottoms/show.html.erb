@@ -7,6 +7,15 @@
   <%= image_tag @item.image.variant(resize: '500x500') %>
 </div>
 
+
+<div>
+<%= link_to '編集', edit_bottom_path, class: "#" %>
+</div>
+
+<div>
+<%= link_to '削除', '#', class: "#" %>
+</div>
+
 <div class="item-brand">
   ブランド：<%= @item.brand%>
 </div>
