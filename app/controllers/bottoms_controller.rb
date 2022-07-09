@@ -20,6 +20,11 @@ class BottomsController < ApplicationController
     end
   end
 
+  def destroy
+    @item = Item.find(params[:id])
+    redirect_to bottoms_path if @item.destroy
+  end
+
   private
 
   def item_params
