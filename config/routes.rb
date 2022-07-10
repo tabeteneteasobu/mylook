@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :items, only: [:index, :new, :create]
   resources :tops, only: [:index, :show, :edit, :update, :destroy]
   resources :bottoms, only: [:index, :show, :edit, :update, :destroy]
+  resources :outfits, only: [:index]
 end
