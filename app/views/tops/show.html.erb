@@ -7,29 +7,39 @@
   <%= image_tag @item.image.variant(resize: '500x500') %>
 </div>
 
-<div>
+<button type="button" class="btn btn-light">
 <%= link_to '編集', edit_top_path, class: "#" %>
-</div>
+</button>
 
-<div>
+<button type="button" class="btn btn-secondary">
 <%= link_to '削除', top_path, method: :delete, class: "#" %>
-</div>
+</button>
 
-<div class="item-brand">
-  ブランド：<%= @item.brand%>
-</div>
-
-<div class="item-color">
-  色：<%= @item.color_id %>
-</div>
-
-<div class="item-size">
-  サイズ：<%= @item.size %>
-</div>
-
-<div class="item-memo">
-  メモ：<%= @item.memo %>
-</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Item information</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">color</th>
+      <td><%= @item.color.id%></td>
+    </tr>
+    <tr>
+      <th scope="row">brand</th>
+      <td><%= @item.brand%></td>
+    </tr>
+    <tr>
+      <th scope="row">size</th>
+      <td colspan="2"><%= @item.size %></td>
+    </tr>
+    <tr>
+      <th scope="row">memo</th>
+      <td colspan="2"><%= @item.memo %></td>
+    </tr>
+  </tbody>
+</table>
 
 <div>
 最近このアイテムは閲覧されていませんでした
