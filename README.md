@@ -1,66 +1,79 @@
-#テーブル設計
+# アプリケーション名
+My Look
+<br>
+<br>
+# アプリケーション概要
+個人向けに自分自身の洋服類を管理するアプリを開発しています。
+<br>
+<br>
+# URL
+https://mylook-38096.herokuapp.com/
+<br>
+<br>
 
-## itemsテーブル
-|Columm               |Type       |Options                        |
-|---------------------|-----------|-------------------------------|
-|memo                 |text       |                               |
-|category_id          |integer    |null: false                    |
-|size                 |string     |                               |
-|brand                |string     |null: false                    |
-|color_id             |integer    |null: false                    |
-|user                 |references |null: false, foreign_key: true |
+# テスト用アカウント
+現時点でログイン機能は実装できていないためテスト用アカウントはないです
 
-### Association
-- belongs_to :user
-- has_many :comments
-- has_many :favorites
+- ベーシック認証ID：admin
+- ベーシック認証パスワード：12345
+<br>
+<br>
 
+# 利用方法
+- 自分の持っている洋服の写真と詳細情報を登録します
+- 登録したアイテムは登録時に選択したカテゴリーごとに一覧で確認できます
+- 詳細情報を確認したい場合は、該当画像をクリックすると詳細ページに遷移して確認できます
+- 詳細ページから情報の編集・削除ができます
+<br>
+<br>
 
+# アプリケーションを作成した背景
+「衣食住」の中で「衣」が一番苦手な自分に向けてのアプリです。
+自分の経験をもとに以下の問題を解決できるを目指して作成しています。
 
-## usersテーブル
-|Columm               |Type       |Options                        |
-|---------------------|-----------|-------------------------------|
-|nickname             |string     |null: false,                   |
-|email                |string     |null: false, unique: true      |
-|encrypted_password   |string     |null: false                    |
+- おしゃれや買い物が苦手な人が今までよりも楽しめるアプリ<br>
+クローゼットを持ち運ぶように外出先でも持っている洋服を確認でき、買い物の失敗を減らすのを手助けします。
 
-### Association
-- has_many :items
-- has_many :comments
-- has_many :favorites
+- 「ていねいな暮らし」を共有するアプリ<br>
+自分の持ち物を全量を把握することにより、自分自身のものとの関わり方や今後の買い物に対する選択肢を見つめ直すきっかけを作ります。
+<br>
+<br>
 
+# 洗い出した要件
+https://docs.google.com/spreadsheets/d/1qZHZHb9_AIsQiPaLK-8qHhpT8FWG-HPeJBJrLvej5c4/edit#gid=982722306
+<br>
+<br>
 
+# 実装した機能についての画像やGIFおよびその説明
+<br>
+<br>
 
-## commentsテーブル
-|Columm               |Type       |Options                        |
-|---------------------|-----------|-------------------------------|
-|comment              |text       |null: false,                   |
-|user                 |references |null: false, foreign_key: true |
-|item                 |references |null: false, foreign_key: true |
+# 実装予定の機能
+今後ログイン機能を実装する予定です。
+また、ログイン機能で取得したユーザー機能をもとにフォロー機能、お気に入り機能も実装したいと考えています。
+<br>
+<br>
 
-### Association
-- belongs_to :items
-- belongs_to :users
+# テーブル設計
+[![Image from Gyazo](https://i.gyazo.com/08828aab4c0fa26d1210c889c5e5338f.png)](https://gyazo.com/08828aab4c0fa26d1210c889c5e5338f)
+<br>
+<br>
 
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/46bd64d53329250838c99981687863f0.png)](https://gyazo.com/46bd64d53329250838c99981687863f0)
+<br>
+<br>
 
+# 開発環境
+- フロントエンド
+- バックエンド
+- テキストエディタ
+<br>
+<br>
 
-## favoritesテーブル
-|Columm               |Type       |Options                        |
-|---------------------|-----------|-------------------------------|
-|user                 |references |null: false, foreign_key: true |
-|item                 |references |null: false, foreign_key: true |
+# ローカルでの動作方法
+<br>
+<br>
 
-### Association
-- belongs_to :items
-- belongs_to :users
-
-
-
-## followsテーブル
-|Columm               |Type       |Options                        |
-|---------------------|-----------|-------------------------------|
-|follower_id          |references |null: false, foreign_key: true |
-|followed_id          |references |null: false, foreign_key: true |
-
-### Association
-- belongs_to :users
+# 工夫したポイント
+- 外で買い物しながら閲覧することも想定しているため、トップページやアイテム一覧ページに余計な情報な載せず視覚的にわかりやすくてシンプルな設計を意識しました。
