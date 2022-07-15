@@ -1,17 +1,19 @@
 <h2>コーディネートページ</h2>
 
-<%= form_with model: @post, id: 'new_post', local: true do |f| %>
-<%= render 'shared/error_messages', model: f.object %>
-  <div class="message-field">
-    <%= f.text_field :text, placeholder: 'type a message' %>
-  </div>
+<%= form_with model: @outfit, id: 'new_tops', local: true do |f| %>
   <div class="image-field">
     <div id="previews"></div>
     <div class="click-upload">
-      <%= f.file_field :images, name: 'post[images][]', data: {index: 0} %>
+      <%= f.file_field :image %>
     </div>
   </div>
-  <div class="submit-btn">
-    <%= f.submit '送信' %>
+<% end %>
+
+<%= form_with model: @outfit, id: 'new_bottoms', local: true do |f| %>
+  <div class="image-field">
+    <div id="previews2"></div>
+    <div class="click-upload">
+      <%= f.file_field :image2 %>
+    </div>
   </div>
 <% end %>
