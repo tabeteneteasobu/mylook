@@ -3,7 +3,13 @@
 <%= link_to 'コーディネート', '#', class: "#" %><br>
         
 
-<h2><%= link_to 'トップスを見る',tops_path %></h2>
-
-<h2><%= link_to 'ボトムスを見る',bottoms_path %></h2>
-
+<div class="menu-bar">
+    <ul class="menu-elements">
+      <li id="menu1">
+        <%= image_tag 'wear.png' , size: '300x200' ,class: "#" %>
+        <ul class="menu1-lists hidden" id="menu1-pull-down">
+          <li><%= link_to 'トップスを見る',tops_path %></li>
+          <li><%= link_to 'ボトムスを見る',bottoms_path %></li>
+        </ul>
+    </ul>
+  </div
