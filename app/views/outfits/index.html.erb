@@ -1,0 +1,19 @@
+<h2>コーディネートページ</h2>
+
+<%= form_with model: @outfit, id: 'new_tops', local: true do |f| %>
+  <div class="image-field">
+    <div id="previews"></div>
+    <div class="click-upload">
+      <%= f.file_field :image %>
+    </div>
+  </div>
+<% end %>
+
+<%= form_with model: @outfit, id: 'new_bottoms', local: true do |f| %>
+  <div class="image-field">
+    <div id="previews2"></div>
+    <div class="click-upload">
+      <%= f.file_field :image2 %>
+    </div>
+  </div>
+<% end %>
