@@ -12,7 +12,8 @@ import "../stylesheets/application"
 require('../item_menu')
 require('../tops_outfit')
 require('../bottoms_outfit')
-
+require('../outfit_icon')
+require('../item_icon')
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
