@@ -1,19 +1,21 @@
-<h2>コーディネートページ</h2>
+<h6><%= link_to '←トップページへ戻る', root_path, class: "#" %></h6>
 
-<%= form_with model: @outfit, id: 'new_tops', local: true do |f| %>
+<h2>コーディネートページ</h2>
+現在制作中
+<%#= form_with model: @outfit, id: 'new_tops', local: true do |f| %>
   <div class="image-field">
     <div id="previews"></div>
     <div class="click-upload">
-      <%= f.file_field :image %>
+      <%#= f.file_field :image %>
     </div>
   </div>
-<% end %>
+<%# end %>
 
-<%= form_with model: @outfit, id: 'new_bottoms', local: true do |f| %>
+<%#= form_with model: @outfit, id: 'new_bottoms', local: true do |f| %>
   <div class="image-field">
     <div id="previews2"></div>
     <div class="click-upload">
-      <%= f.file_field :image2 %>
+      <%#= f.file_field :image2 %>
     </div>
   </div>
-<% end %>
+<%# end %>
