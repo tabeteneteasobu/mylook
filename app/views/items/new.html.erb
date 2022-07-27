@@ -1,6 +1,5 @@
-<h1><%= link_to 'My Look', root_path, class: "#" %></h1>
+<h6><%= link_to '←トップページへ戻る', root_path, class: "#" %></h6>
 
-<h2>アイテム登録</h2>
 
 <div class="items-sell-main">
   <h2 class="items-sell-title">アイテム情報を入力</h2>
@@ -42,14 +41,14 @@
           ブランド
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :brand, class:"items-text", id:"item-info", placeholder:"ブランド" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :brand, class:"items-text", id:"item-info", placeholder:"ブランド" ,rows:"1" ,maxlength:"1000" %>
       </div>
       <%# サイズ %>
       <div class="items-size">
         <div class="weight-bold-text">
           サイズ
         </div>
-        <%= f.text_area :size, class:"items-text", id:"item-info", placeholder:"サイズ" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :size, class:"items-text", id:"item-info", placeholder:"サイズ" ,rows:"1" ,maxlength:"1000" %>
       </div>
       <%# メモ %>
       <div class="items-explain">
@@ -57,7 +56,7 @@
           メモ
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :memo, class:"items-text", id:"item-info", placeholder:"アイテムメモ（1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
+        <%= f.text_area :memo, class:"items-text", id:"item-info", placeholder:"アイテムメモ（1,000文字まで）（素材、よく合わせる服、注意点など）" ,rows:"7" ,maxlength:"1000" %>
       </div>
     </div>
     <div class="sell-btn-contents">
@@ -66,49 +65,4 @@
     </div>
     <% end %>
 
- <form>
- <%= form_with model: @item, url: items_path, local: true do |f| %>
-  <fieldset disabled>
-    <legend>アイテム登録</legend>
-    <div class="mb-3">
-      <label for="disabledSelect" class="form-label">カテゴリー　必須</label>
-      <select id="disabledSelect" class="form-select">
-        <option>
-          <%= f.collection_select(:category_id, Category.all, :id, :name, {id: 1}, {class:"select-box", id:"#"}) %>
-        </option>
-      </select>
-    </div>
-    <div class="mb-3">
-      <label for="disabledSelect" class="form-label">Disabled select menu</label>
-      <select id="disabledSelect" class="form-select">
-        <option>Disabled select</option>
-      </select>
-    </div>
-    <div class="mb-3">
-      <label for="disabledSelect" class="form-label">Disabled select menu</label>
-      <select id="disabledSelect" class="form-select">
-        <option>Disabled select</option>
-      </select>
-    </div>
-    <div class="mb-3">
-      <label for="disabledTextInput" class="form-label">Disabled input</label>
-      <input type="text" id="disabledTextInput" class="form-control" placeholder="Disabled input">
-    </div>
-    <div class="mb-3">
-      <label for="disabledSelect" class="form-label">Disabled select menu</label>
-      <select id="disabledSelect" class="form-select">
-        <option>Disabled select</option>
-      </select>
-    </div>
-    <div class="mb-3">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="disabledFieldsetCheck" disabled>
-        <label class="form-check-label" for="disabledFieldsetCheck">
-          Can't check this
-        </label>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-primary">登録</button>
-  </fieldset>
-<% end %>
-</form>
+ 
