@@ -1,17 +1,19 @@
 
 
-
+<br>
 <div class="menu-bar">
     <div class="menu-elements">
       <div id="menu1">
         <%= image_tag 'wear.png' , size: '300x200' ,id: "item_icon" %>
-        <div class="menu1-lists hidden" id="menu1-pull-down">
-          <div><%= link_to 'トップスを見る',tops_path %></div>
-          <div><%= link_to 'ボトムスを見る',bottoms_path %></div>
+        <div class="menu1-lists hidden", id="menu1-pull-down">
+          <div><%= link_to '■ トップスを見る',tops_path %></div>
+          <div><%= link_to '■ ボトムスを見る',bottoms_path %></div>
         </div>
+      </div>
     </div>
 </div>
-
+<br>
+<br>
 
 <div class="outfit-bar">
   <%= link_to image_tag("outfit.png", size: '300x200', id: "outfit_icon"), outfits_path %>
