@@ -3,4 +3,3 @@ class OutfitsController < ApplicationController
     @outfit = Outfit.new
   end
 end
-
